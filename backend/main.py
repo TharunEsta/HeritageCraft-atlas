@@ -7,6 +7,7 @@ from bson import ObjectId
 from typing import Optional, List, Dict
 from datetime import datetime
 import os
+import secrets
 from dotenv import load_dotenv
 import json
 
@@ -64,6 +65,11 @@ async def health_check():
         return {"status": "unhealthy", "error": str(e)}
 
 
+def generate_barcode() -> str:
+    """Generate a unique verification barcode (e.g. HC-A1B2C3D4)."""
+    return "HC-" + secrets.token_hex(4).upper()
+
+
 @app.post("/api/products")
 async def create_product(
     name: str = Form(...),
@@ -77,7 +83,8 @@ async def create_product(
     image_url: Optional[str] = Form(None),
     latitude: Optional[str] = Form(None),
     longitude: Optional[str] = Form(None),
-    cultural_story: Optional[str] = Form(None)
+    cultural_story: Optional[str] = Form(None),
+    barcode: Optional[str] = Form(None)
 ):
     """Create a new artisan product with GI metadata"""
     try:
@@ -85,6 +92,17 @@ async def create_product(
         price_float = float(price) if price and price.strip() else None
         lat_float = float(latitude) if latitude and latitude.strip() else None
         lng_float = float(longitude) if longitude and longitude.strip() else None
+        
+        # Barcode: use provided or auto-generate unique code
+        barcode_value = (barcode or "").strip() or None
+        if barcode_value:
+            existing = products_collection.find_one({"barcode": barcode_value})
+            if existing:
+                raise HTTPException(status_code=400, detail="A product with this barcode already exists")
+        else:
+            barcode_value = generate_barcode()
+            while products_collection.find_one({"barcode": barcode_value}):
+                barcode_value = generate_barcode()
         
         product = {
             "name": name,
@@ -96,6 +114,7 @@ async def create_product(
             "price": price_float,
             "category": category or "Traditional Craft",
             "image_url": image_url,
+            "barcode": barcode_value,
             "location": {
                 "latitude": lat_float,
                 "longitude": lng_float
@@ -278,6 +297,31 @@ async def get_products_by_gi_tag():
             "success": True,
             "gi_tags": results
         }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/products/verify")
+async def verify_product_by_barcode(barcode: Optional[str] = None):
+    """Verify a product by barcode or verification code. Returns product if found."""
+    if not barcode or not barcode.strip():
+        raise HTTPException(status_code=400, detail="Barcode or verification code is required")
+    code = barcode.strip().upper()
+    if not code.startswith("HC-"):
+        code = "HC-" + code
+    try:
+        product = products_collection.find_one({"barcode": code, "is_active": True})
+        if not product:
+            product = products_collection.find_one({"barcode": barcode.strip(), "is_active": True})
+        if not product:
+            raise HTTPException(status_code=404, detail="Product not found. This barcode may be invalid or the product may be inactive.")
+        return {
+            "success": True,
+            "verified": True,
+            "product": serialize_doc(product)
+        }
+    except HTTPException:
+        raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 

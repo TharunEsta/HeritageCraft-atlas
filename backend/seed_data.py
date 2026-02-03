@@ -34,6 +34,7 @@ sample_products = [
             "longitude": 80.6480
         },
         "cultural_story": "Kondapalli toys have a history of over 400 years. The craft was introduced by artisans from Rajasthan who settled in Kondapalli village. These toys are traditionally made during the festival of Sankranti and are considered auspicious.",
+        "barcode": "HC-KOND-001",
         "created_at": datetime.utcnow(),
         "updated_at": datetime.utcnow(),
         "is_active": True
@@ -53,6 +54,7 @@ sample_products = [
             "longitude": 78.4867
         },
         "cultural_story": "Kalamkari is a 3000-year-old art form that involves hand-painting or block-printing on fabric. The name comes from 'kalam' (pen) and 'kari' (work). This art form flourished under the patronage of the Golconda sultans.",
+        "barcode": "HC-KAL-002",
         "created_at": datetime.utcnow(),
         "updated_at": datetime.utcnow(),
         "is_active": True
@@ -72,6 +74,7 @@ sample_products = [
             "longitude": 78.4867
         },
         "cultural_story": "Pochampally Ikat is a traditional form of weaving that originated in the Pochampally village. The technique involves resist-dyeing the yarns before weaving, creating intricate geometric patterns. This craft has been practiced for over 200 years.",
+        "barcode": "HC-POCH-003",
         "created_at": datetime.utcnow(),
         "updated_at": datetime.utcnow(),
         "is_active": True
@@ -91,6 +94,7 @@ sample_products = [
             "longitude": 77.5041
         },
         "cultural_story": "Bidriware is a traditional metal handicraft from Bidar, Karnataka. The craft involves inlaying silver or gold on a blackened zinc and copper alloy. This art form dates back to the 14th century and was brought to India by Persian artisans.",
+        "barcode": "HC-BIDR-004",
         "created_at": datetime.utcnow(),
         "updated_at": datetime.utcnow(),
         "is_active": True
@@ -110,6 +114,7 @@ sample_products = [
             "longitude": 77.2088
         },
         "cultural_story": "Channapatna toys are traditional wooden toys from the town of Channapatna in Karnataka. The craft was introduced by Tipu Sultan in the 18th century. These toys are made from ivory wood and colored with vegetable dyes, making them safe for children.",
+        "barcode": "HC-CHAN-005",
         "created_at": datetime.utcnow(),
         "updated_at": datetime.utcnow(),
         "is_active": True
@@ -129,6 +134,7 @@ sample_products = [
             "longitude": 79.7000
         },
         "cultural_story": "Kanjivaram sarees are one of India's most luxurious silk sarees, originating from Kanchipuram, Tamil Nadu. The craft dates back over 400 years. These sarees are known for their durability, rich colors, and intricate zari (gold thread) work, often featuring temple motifs.",
+        "barcode": "HC-KANJ-006",
         "created_at": datetime.utcnow(),
         "updated_at": datetime.utcnow(),
         "is_active": True
@@ -148,6 +154,7 @@ sample_products = [
             "longitude": 86.0750
         },
         "cultural_story": "Madhubani or Mithila painting is a traditional art form from the Mithila region of Bihar. This art form dates back to the time of the Ramayana. Traditionally, women painted these on the walls of their homes during festivals and special occasions. The paintings feature geometric patterns and scenes from mythology.",
+        "barcode": "HC-MADH-007",
         "created_at": datetime.utcnow(),
         "updated_at": datetime.utcnow(),
         "is_active": True
@@ -167,6 +174,7 @@ sample_products = [
             "longitude": 85.8245
         },
         "cultural_story": "Pattachitra is a traditional cloth-based scroll painting from Odisha. The name comes from 'patta' (cloth) and 'chitra' (picture). This art form dates back to the 5th century BC and is closely associated with the Jagannath Temple in Puri. Artists use natural colors derived from minerals and vegetables.",
+        "barcode": "HC-PATT-008",
         "created_at": datetime.utcnow(),
         "updated_at": datetime.utcnow(),
         "is_active": True
@@ -186,6 +194,7 @@ sample_products = [
             "longitude": 75.7139
         },
         "cultural_story": "Warli painting is a tribal art form from Maharashtra, dating back to 2500-3000 BCE. These paintings are traditionally done by Warli women on the walls of their mud houses. The art uses basic geometric shapes like circles, triangles, and squares to depict human figures, animals, and daily activities.",
+        "barcode": "HC-WARL-009",
         "created_at": datetime.utcnow(),
         "updated_at": datetime.utcnow(),
         "is_active": True
@@ -205,6 +214,7 @@ sample_products = [
             "longitude": 76.7794
         },
         "cultural_story": "Phulkari, meaning 'flower work', is a traditional embroidery technique from Punjab. This craft has been practiced for centuries and was traditionally made by women for their dowries. Each Phulkari piece tells a story through its intricate patterns and vibrant colors.",
+        "barcode": "HC-PHUL-010",
         "created_at": datetime.utcnow(),
         "updated_at": datetime.utcnow(),
         "is_active": True
@@ -224,6 +234,7 @@ sample_products = [
             "longitude": 75.7873
         },
         "cultural_story": "Blue Pottery is a traditional craft from Jaipur, Rajasthan. Unlike regular pottery, it doesn't use clay but instead uses a dough-like mixture of quartz stone powder, glass, and Multani Mitti. The craft was introduced to India by Persian artisans in the 14th century.",
+        "barcode": "HC-BLUE-011",
         "created_at": datetime.utcnow(),
         "updated_at": datetime.utcnow(),
         "is_active": True
@@ -243,6 +254,7 @@ sample_products = [
             "longitude": 74.7973
         },
         "cultural_story": "Kashmiri Pashmina is one of the finest and most luxurious textiles in the world. Made from the undercoat of the Changthangi goat found in the high altitudes of Ladakh. The craft has been practiced for over 500 years and was once reserved for royalty.",
+        "barcode": "HC-PASH-012",
         "created_at": datetime.utcnow(),
         "updated_at": datetime.utcnow(),
         "is_active": True
@@ -262,6 +274,7 @@ sample_products = [
             "longitude": 87.0715
         },
         "cultural_story": "Bankura Terracotta is a traditional craft from West Bengal, known for its distinctive red clay pottery. The craft has been practiced for centuries and is particularly famous for the Bankura Horse, a traditional terracotta sculpture.",
+        "barcode": "HC-BANK-013",
         "created_at": datetime.utcnow(),
         "updated_at": datetime.utcnow(),
         "is_active": True
@@ -281,6 +294,7 @@ sample_products = [
             "longitude": 72.5714
         },
         "cultural_story": "Rogan art is a 300-year-old craft from Kutch, Gujarat. The art involves painting intricate designs on fabric using a castor oil-based paint. This craft is practiced by only a few families in India, making it extremely rare and valuable.",
+        "barcode": "HC-ROGN-014",
         "created_at": datetime.utcnow(),
         "updated_at": datetime.utcnow(),
         "is_active": True
@@ -300,6 +314,7 @@ sample_products = [
             "longitude": 81.8661
         },
         "cultural_story": "Dhokra is a traditional metal casting technique practiced by tribal communities in Chhattisgarh. The craft uses the lost-wax casting method, which dates back over 4000 years. Each piece is unique and reflects the rich tribal culture of the region.",
+        "barcode": "HC-DHOK-015",
         "created_at": datetime.utcnow(),
         "updated_at": datetime.utcnow(),
         "is_active": True

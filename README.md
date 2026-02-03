@@ -32,9 +32,13 @@ HeritageCraft Atlas/
 
 ### Prerequisites
 
-- Python 3.9+
-- Node.js 18+
-- MongoDB (local or MongoDB Atlas)
+- **Python 3.9+**
+- **Node.js 18+**
+- **MongoDB** (local or [MongoDB Atlas](https://www.mongodb.com/atlas) free tier)
+
+### After cloning on a new device
+
+When you clone this repo on another machine, you **do need to install dependencies** (they are not stored in the repo). Follow the steps below once per device.
 
 ### Quick Start
 
@@ -44,7 +48,7 @@ git clone <repository-url>
 cd "HeritageCraft Atlas"
 ```
 
-2. **Backend Setup:**
+2. **Backend Setup** (install Python dependencies and run):
 ```bash
 cd backend
 python -m venv venv
@@ -55,37 +59,32 @@ source venv/bin/activate
 
 pip install -r requirements.txt
 
-# Create .env file from .env.example
-cp .env.example .env
-# Edit .env with your MongoDB connection string
+# Copy env template and edit if needed
+# Windows: copy .env.example .env
+# macOS/Linux: cp .env.example .env
 
-# Start the backend server
 uvicorn main:app --reload
 ```
 
-The backend API will be available at `http://localhost:8000`
-- API Documentation: http://localhost:8000/docs
+Backend runs at `http://localhost:8000` · API docs: http://localhost:8000/docs
 
-3. **Seed Sample Data (Optional):**
+3. **Seed sample data (optional):**
 ```bash
 cd backend
 python seed_data.py
 ```
 
-4. **Frontend Setup:**
+4. **Frontend Setup** (install Node dependencies and run):
 ```bash
 cd frontend
 npm install
 
-# Create .env file from .env.example
-cp .env.example .env
-# Edit .env with your backend API URL (default: http://localhost:8000)
+# Create .env with: REACT_APP_API_URL=http://localhost:8000
 
-# Start the frontend development server
 npm start
 ```
 
-The frontend will open at `http://localhost:3000`
+Frontend runs at `http://localhost:3000`
 
 ## Environment Variables
 
